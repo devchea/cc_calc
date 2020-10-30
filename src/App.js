@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import StockDetailCard from './StockDetailsCard'
+import Dashboard from './Dashboard'
 import StockNameCard from './StockNameCard';
 
 
@@ -8,7 +8,7 @@ const App = () => {
   return (
     <div className='App'>
       <StockNameCard/>
-      <StockDetailCard/>
+      <Dashboard/>
     </div>
   )
 }

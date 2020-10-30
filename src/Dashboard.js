@@ -1,9 +1,11 @@
-import "./StockNameCard.css";
+import "./Dashboard.css";
 import React, { useState, useEffect } from "react";
 import firebase from "./firebase";
 import Card from "react-bootstrap/Card";
 import CardColumns from "react-bootstrap/CardColumns";
 import Container from "react-bootstrap/Container";
+import StockNameCard from './StockNameCard'
+
 
 const Dashboard = () => {
   const [stocks, setStocks] = useState([]);
@@ -16,32 +18,17 @@ const Dashboard = () => {
     };
     fetchData();
   }, []);
-
-  console.log(stocks);
+  console.log('DB:', stocks);
   return (
     <div>
       <h1>SNC</h1>
       <Container>
         <CardColumns className="cardColumn">
-          {stocks.map((stockObj) => (
-            <Card key={stockObj.name} className="card">
-              <Card.Title>{stockObj.name}</Card.Title>
-              <Card.Text>
-                {stockObj.sharesOwned
-                  ? `Shares: ${stockObj.sharesOwned}`
-                  : `No shares owned`}
-              </Card.Text>
-              <Card.Text>
-                {stockObj.purchasePrice
-                  ? `Shares: $${stockObj.purchasePrice}`
-                  : `No shares owned`}
-              </Card.Text>
-            </Card>
-          ))}
+          <StockNameCard {...stocks}/>
         </CardColumns>
       </Container>
     </div>
   );
 };
 
-export default StockNameCard;
+export default Dashboard;

@@ -1,45 +1,32 @@
 import './StockNameCard.css'
 import Card from "react-bootstrap/Card";
 
-const StockNameCard = () => {
-  const [stocks, setStocks] = useState([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const db = firebase.firestore()
-      const data = await db.collection('stocks').get()
-      setStocks(data.docs.map(doc => ({ ...doc.data(), id: doc.id})))
-    }
-    fetchData()
-
-  }, [])
-
-  console.log(stocks);
+const StockNameCard = (props) => {
+  console.log('SNC:', props);
   return (
     <div>
-      <h1>SNC</h1>
-      <Container>
-        <CardColumns className="cardColumn">
-          {stocks.map((stockObj) => (
-            <Card key={stockObj.name} className="card">
-              <Card.Title>{stockObj.name}</Card.Title>
-              <Card.Text>
-                {stockObj.sharesOwned
-                  ? `Shares: ${stockObj.sharesOwned}`
-                  : `No shares owned`}
-              </Card.Text>
-              <Card.Text>
-                {stockObj.purchasePrice
-                  ? `Shares: $${stockObj.purchasePrice}`
-                  : `No shares owned`}
-              </Card.Text>
-            </Card>
-          ))}
-        </CardColumns>
-      </Container>
+      <Card></Card>
     </div>
   );
 
 }
 
 export default StockNameCard
+
+// {
+//   stocks.map((stockObj) => (
+//     <Card key={stockObj.name} className="card">
+//       <Card.Title>{stockObj.name}</Card.Title>
+//       <Card.Text>
+//         {stockObj.sharesOwned
+//           ? `Shares: ${stockObj.sharesOwned}`
+//           : `No shares owned`}
+//       </Card.Text>
+//       <Card.Text>
+//         {stockObj.purchasePrice
+//           ? `Shares: $${stockObj.purchasePrice}`
+//           : `No shares owned`}
+//       </Card.Text>
+//     </Card>
+//   ));
+// }
