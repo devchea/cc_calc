@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import './App.css';
 import firebase from './firebase'
+import StockDetailCard from './StockDetailsCard'
+import StockNameCard from './StockNameCard';
 
 
 const App = () => {
-  const [stock, setStock] = useState([])
-
-  const ref = firebase.firestore().collection("stocks")
-
   return (
-    <div className="App">
-      <h1>CC Calc</h1>
+    <div className='App'>
+      <StockNameCard/>
+      <StockDetailCard/>
     </div>
-  );
+  )
 }
 
 export default App;
