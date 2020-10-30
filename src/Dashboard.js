@@ -1,18 +1,21 @@
-import './StockNameCard.css'
+import "./StockNameCard.css";
+import React, { useState, useEffect } from "react";
+import firebase from "./firebase";
 import Card from "react-bootstrap/Card";
+import CardColumns from "react-bootstrap/CardColumns";
+import Container from "react-bootstrap/Container";
 
-const StockNameCard = () => {
+const Dashboard = () => {
   const [stocks, setStocks] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const db = firebase.firestore()
-      const data = await db.collection('stocks').get()
-      setStocks(data.docs.map(doc => ({ ...doc.data(), id: doc.id})))
-    }
-    fetchData()
-
-  }, [])
+      const db = firebase.firestore();
+      const data = await db.collection("stocks").get();
+      setStocks(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
+    fetchData();
+  }, []);
 
   console.log(stocks);
   return (
@@ -39,7 +42,6 @@ const StockNameCard = () => {
       </Container>
     </div>
   );
+};
 
-}
-
-export default StockNameCard
+export default StockNameCard;
