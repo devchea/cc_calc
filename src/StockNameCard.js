@@ -5,7 +5,12 @@ const StockNameCard = (props) => {
   console.log('SNC:', props);
   return (
     <div>
-      <Card></Card>
+      {
+        // props.map((stockObj) => (
+          console.log(props)
+        // ))
+      }
+
     </div>
   );
 

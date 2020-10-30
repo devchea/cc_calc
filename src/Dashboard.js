@@ -1,14 +1,14 @@
 import "./Dashboard.css";
 import React, { useState, useEffect } from "react";
 import firebase from "./firebase";
-import Card from "react-bootstrap/Card";
 import CardColumns from "react-bootstrap/CardColumns";
 import Container from "react-bootstrap/Container";
 import StockNameCard from './StockNameCard'
+import ProgressBar from "react-bootstrap/ProgressBar";
 
 
 const Dashboard = () => {
-  const [stocks, setStocks] = useState([]);
+  const [stocks, setStocks] = useState([null]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,15 +18,21 @@ const Dashboard = () => {
     };
     fetchData();
   }, []);
-  console.log('DB:', stocks);
+
   return (
     <div>
-      <h1>SNC</h1>
-      <Container>
-        <CardColumns className="cardColumn">
-          <StockNameCard {...stocks}/>
-        </CardColumns>
-      </Container>
+      {stocks[0] === null ? (
+        <h2>
+          Loading...
+          <ProgressBar animated now={80} />
+        </h2>
+      ) : (
+        <Container>
+          <CardColumns className="cardColumn">
+            <StockNameCard {...stocks} />
+          </CardColumns>
+        </Container>
+      )}
     </div>
   );
 };
