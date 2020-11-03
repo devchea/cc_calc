@@ -12,12 +12,12 @@ const Dashboard = () => {
 
   const url = "http://localhost:3000/stocks";
   const [stocks, setStocks] = useState([null]);
+  const [details, setDetails] = useState([null])
 
   const fetchStocks = () => {
     fetch(url)
     .then(res => res.json())
     .then(data => setStocks(data))
-
   }
 
   useEffect(() => {
@@ -38,6 +38,7 @@ const Dashboard = () => {
           <StockNameCard 
             stocks={stocks} />
           </CardColumns>
+
           <StockDetailsCard
             stocks={stocks} />
         </Container>

@@ -5,20 +5,45 @@
       "purchasedPrice": 51.28, 
       "sharesOwned": 400, 
       "contracts": 
-        { 
-          "quantity": 10,
-          "sellCalls": 0.5
-        }
+        [
+          { 
+            "date": "Jan",
+            "quantity": 10,
+            "sellCalls": 0.5
+          },
+          { 
+            "date": "Feb",
+            "quantity": 10,
+            "sellCalls": 0.5
+          },
+          { 
+            "date": "Mar",
+            "quantity": 10,
+            "sellCalls": 0.5
+          }
+      ]
     },
     {
       "name": "AMD", 
       "purchasedPrice": 11.44, 
       "sharesOwned": 100, 
       "contracts": 
-        { 
-          "quantity": 20,
-          "sellCalls": 0.1
-        }
+        [
+          { 
+            "quantity": 20,
+            "sellCalls": 0.1
+          },
+          { 
+            "date": "Feb",
+            "quantity": 10,
+            "sellCalls": 0.5
+          },
+          { 
+            "date": "Mar",
+            "quantity": 10,
+            "sellCalls": 0.5
+          }
+        ]
     },
     {
       "name": "MSFT", 

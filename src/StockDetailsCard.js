@@ -7,7 +7,11 @@ const StockDetailCard = (props) => {
   return (
     <div className="App">
       <h1>Details</h1>
-
+      {
+        props.stocks.map((stockObj) => (
+          ``
+        ))
+      }
     </div>
   );
 }
