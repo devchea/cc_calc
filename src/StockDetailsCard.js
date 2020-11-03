@@ -1,17 +1,24 @@
 import React from 'react'
+import Table from "react-bootstrap/Table";
 
 const StockDetailCard = (props) => {
-  console.log(props);
-
 
   return (
     <div className="App">
       <h1>Details</h1>
-      {
-        props.stocks.map((stockObj) => (
-          ``
-        ))
-      }
+      <Table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Name</th>
+            <th>Name</th>
+            <th>Name</th>
+          </tr>
+          { 
+            
+          }
+        </thead>
+      </Table>
     </div>
   );
 }

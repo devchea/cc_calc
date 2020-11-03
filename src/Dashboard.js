@@ -24,6 +24,10 @@ const Dashboard = () => {
     fetchStocks()
   },[])
 
+  const showDetails = (props) => {
+    setDetails(props)
+    console.log('details:',details);
+  };
 
   return (
     <div>
@@ -36,7 +40,10 @@ const Dashboard = () => {
         <Container>
           <CardColumns className="cardColumn">
           <StockNameCard 
-            stocks={stocks} />
+            stocks={stocks} 
+            showDetails={showDetails}
+            />
+          
           </CardColumns>
 
           <StockDetailsCard
