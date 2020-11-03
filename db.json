@@ -1,9 +1,55 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
-  ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" }
+  "stocks": [
+    {
+      "name": "DKNG", 
+      "purchasedPrice": 51.28, 
+      "sharesOwned": 400, 
+      "contracts": 
+        { 
+          "quantity": 10,
+          "sellCalls": 0.5
+        }
+    },
+    {
+      "name": "AMD", 
+      "purchasedPrice": 11.44, 
+      "sharesOwned": 100, 
+      "contracts": 
+        { 
+          "quantity": 20,
+          "sellCalls": 0.1
+        }
+    },
+    {
+      "name": "MSFT", 
+      "purchasedPrice": 202.20, 
+      "sharesOwned": 200, 
+      "contracts": 
+        { 
+          "quantity": 40,
+          "sellCalls": 0.84
+        }
+    },
+    {
+      "name": "DIS", 
+      "purchasedPrice": 151.28, 
+      "sharesOwned": 100, 
+      "contracts": 
+        { 
+          "quantity": 410,
+          "sellCalls": 0.2
+        }
+    },
+    {
+      "name": "AMZN", 
+      "purchasedPrice": 0, 
+      "sharesOwned": 0
+    },
+    {
+      "name": "NET", 
+      "purchasedPrice": 0, 
+      "sharesOwned": 0
+    }
+  ]
+  
 }

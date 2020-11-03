@@ -1,12 +1,12 @@
 import React from 'react'
 
-const StockDetailCard = () => {
-
+const StockDetailCard = (props) => {
+  console.log(props);
 
 
   return (
     <div className="App">
-      <h1>SDC</h1>
+      <h1>Details</h1>
 
     </div>
   );
