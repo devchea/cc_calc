@@ -2,15 +2,13 @@ import './StockNameCard.css'
 import Card from "react-bootstrap/Card";
 
 const StockNameCard = (props) => {
-  console.log('SNC:', props);
+  if (!props==null) props.forEach(element => {
+    console.log(props);
+  });
+  
   return (
     <div>
-      {
-        // props.map((stockObj) => (
-          console.log(props)
-        // ))
-      }
-
+      
     </div>
   );
 

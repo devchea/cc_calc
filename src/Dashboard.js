@@ -14,14 +14,15 @@ const Dashboard = () => {
     const fetchData = async () => {
       const db = firebase.firestore();
       const data = await db.collection("stocks").get();
-      setStocks(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+      setStocks(data.docs.map((doc) => ({...doc.data()})));
     };
     fetchData();
   }, []);
 
   return (
     <div>
-      {stocks[0] === null ? (
+      {(stocks[0] === null
+      ) ? (
         <h2>
           Loading...
           <ProgressBar animated now={80} />
@@ -29,7 +30,8 @@ const Dashboard = () => {
       ) : (
         <Container>
           <CardColumns className="cardColumn">
-            <StockNameCard {...stocks} />
+          <StockNameCard 
+            {...stocks} />
           </CardColumns>
         </Container>
       )}
